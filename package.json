@@ -1,0 +1,17 @@
+{
+  "name": "oneNewsProjectService",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-router": "^9.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
