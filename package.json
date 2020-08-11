@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./src/app.js"
+    "dev": "nodemon  ./src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-logger": "^3.2.1",
+    "koa-mysql-session": "0.0.2",
     "koa-router": "^9.1.0",
+    "koa-session-minimal": "^4.0.0",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
   }
 }
