@@ -36,7 +36,13 @@ const createTable = (sql) => {
 createTable(users)
 
 // 用户注册
-exports.insterUserData = (val) => {
-    const _sql = "insert into users set username=?,password=?,mobile=?,avatar=?,create_at=?;";
+exports.insterUser = (val) => {
+    const _sql = "insert into users set username=?,password=?,create_at=?;";
     return query(_sql, val)
+}
+
+// 用户登录
+exports.getUserLogin = (username, password) => {
+    const _sql = `select * from users where username=${username},password=${password};`;
+    return query(_sql)
 }
