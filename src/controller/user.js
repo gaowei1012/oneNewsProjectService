@@ -1,5 +1,5 @@
 
-const UserModql = require('../db/mysql')
+const UserModal = require('../db/mysql')
 const {decrpty, encrpty} = require('../utils/crpty')
 
 /* 获取用户信息 */
@@ -19,8 +19,8 @@ exports.register = async (ctx, next) => {
     let {username, password} = ctx.request.body
     if ((username && password) !== null) {
         newPassword = encrpty(password)
-        await UserModql.insterUser([username, newPassword, create_at])
-            .then(res => {
+        await UserModal.insterUser([username, newPassword, create_at])
+            .then(ret => {
                 ctx.body = {
                     code: 1,
                     data: '注册成功'
@@ -48,12 +48,12 @@ exports.login = async (ctx, next) => {
     if ((username && password) !== null) {
         newPassword = encrpty(password)
         await UserModal.getUserLogin(username, newPassword)
-            .then(res => {
+            .then(ret => {
                 // 用户登录成功，返回token
                 const token = ''
                 ctx.body = {
                     code: 1,
-                    data: token
+                    data: ret
                 }
             })
             .catch(err => {
