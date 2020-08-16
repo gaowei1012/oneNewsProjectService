@@ -1,9 +1,10 @@
 const Koa = require('koa')
-const { port, host, database } = require('./config')
+const { port, host, database, jwtSecret } = require('./config')
 const logger = require('koa-logger')
 const koaBody = require('koa-body')
 const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
+// const koaJwt = require('koa-jwt') //路由权限控制
 
 const app = new Koa()
 
